@@ -3,47 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: #f4f4f4;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .resume-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         iframe {
             width: 100%;
-            height: 500px;
+            height: 100vh;
             border: none;
+            transform: scale(1); /* No zooming, just fits to width */
         }
-        .download-btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            font-size: 18px;
+        .download-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 123, 255, 0.9);
             color: white;
-            background: #007bff;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
             text-decoration: none;
-            border-radius: 5px;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.2s;
         }
-        .download-btn:hover {
-            background: #0056b3;
+        .download-icon:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>My Resume</h1>
-        <iframe src="https://drive.google.com/file/d/1eZvj1Oo38uzJ2QEorEwFSxECMQWPOZzU/view?usp=sharing"></iframe>
-        <br>
-        <a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID" class="download-btn">Download Resume</a>
+    <div class="resume-container">
+        <iframe src="https://drive.google.com/file/d/1eZvj1Oo38uzJ2QEorEwFSxECMQWPOZzU/preview"></iframe>
     </div>
+    
+    <!-- Floating Download Icon -->
+    <a class="download-icon" href="https://drive.google.com/uc?export=download&id=1eZvj1Oo38uzJ2QEorEwFSxECMQWPOZzU" download title="Download Resume">
+        ⬇
+    </a>
 </body>
 </html>
